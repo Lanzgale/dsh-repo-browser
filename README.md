@@ -19,6 +19,24 @@ DeepSeek Harness 的 GitHub 仓库浏览器插件：标题栏提供 GitHub 猫�
 dsh plugin --profile web add dsh-repo-browser
 ```
 
+## 配置(GitHub)
+
+仓库列表经 GitHub API 拉取,需要 `GITHUB_TOKEN`(插件不使用 SSH 公钥):
+
+1. **生成 token**:GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token
+   - 仅浏览公开仓库:默认 scope 即可
+   - 浏览私有仓库、使用 ⋮ 菜单的「设为私有 / 归档」:必须勾选 **`repo`** scope
+2. **写入 credentials**(推荐,插件优先读取):
+
+   ```yaml
+   # ~/.dsh/.credentials.yaml
+   refs:
+     GITHUB_TOKEN: ghp_xxxxxxxxxxxxxxxx
+   ```
+
+   或设置环境变量 `GITHUB_TOKEN`(回退)
+3. **重启 DSH** 生效。换 token 只需改 credentials 里的值。
+
 ## 结构
 
 ```
