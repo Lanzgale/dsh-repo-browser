@@ -6,12 +6,13 @@ DeepSeek Harness 的 GitHub 仓库浏览器插件：标题栏提供 GitHub 猫�
 
 ## 功能
 
-- **仓库列表**：经 GitHub API 拉取（`/user/repos?affiliation=owner`，含私有仓库），卡片显示名称、描述、语言、星标、fork、最后推送、私有/归档标记
+- **仓库列表**：经 GitHub API 拉取（`/user/repos?affiliation=owner`，含私有仓库），卡片显示名称、描述、语言、星标、fork、最后推送、**topics**、私有/归档标记
 - **本地分组**：全部仓库 / 未分类 / 自定义分组（新建、重命名、删除），分组是纯本地视图层，存 `$DSH_HOME/storages/repo-browser/groups.json`，与 GitHub 侧无关
 - **卡片 ⋮ 菜单**：移动到分组（单选即移）、设为私有/取消私有、归档/取消归档（经 GitHub `PATCH /repos/{owner}/{repo}`）
 - **深浅主题**：太阳/月亮一键切换（记忆偏好）
 - **面板**：右侧 `shell.overlay`，默认 360px，左边缘拖拽 360–720 调宽
 - **凭据**：读取 DSH credentials 中的 `GITHUB_TOKEN`（修改私有/归档需要 `repo` scope）
+- **新会话页自动隐藏**：未选会话、或当前是空白会话（新建未发言）时不渲染面板，并同时撤掉给内容让位的布局边距、收起已展开的卡片菜单；`open` 开关本身不改动，回到真实会话原样恢复
 
 ## 安装
 

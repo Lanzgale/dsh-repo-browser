@@ -1,7 +1,7 @@
 {
   "name": "dsh-repo-browser",
   "version": "0.1.0",
-  "description": "Repo Browser for DeepSeek Harness: side panel listing your GitHub repositories (name/description/language/stars/activity) with local grouping folders",
+  "description": "Repo Browser for DeepSeek Harness: right-side panel listing your GitHub repositories (name / description / language / stars / forks / topics / last push, private & archived flags) with local grouping folders and quick actions (move to group, make private, archive); auto-hides on the new-session page. DeepSeek Harness 的 GitHub 仓库浏览器插件。",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
