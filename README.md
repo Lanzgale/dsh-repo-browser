@@ -2,7 +2,7 @@
 
 > **Repository Browser for DeepSeek Harness** — a right-side resizable panel listing your GitHub repositories with local grouping and quick actions (move-to-group / make private / archive). Install: `dsh plugin --profile web add dsh-repo-browser`.
 
-DeepSeek Harness 的 GitHub 仓库浏览器插件：作为**档位**挂在外壳 `dsh-rightbar-shell` 的右栏里，从右栏标题行的档位菜单切换进来。
+DeepSeek Harness 的 GitHub 仓库浏览器插件：作为**档位**挂在外壳 `dsh-rightbar-shell` 的右栏里，从右栏标题行的档位菜单切换进来（自报 `order: 2`，所以排在文件浏览器（1）下面）。
 
 ## 功能
 
