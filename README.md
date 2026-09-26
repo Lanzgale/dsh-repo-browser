@@ -2,7 +2,7 @@
 
 > **Repository Browser for DeepSeek Harness** — a right-side resizable panel listing your GitHub repositories with local grouping and quick actions (move-to-group / make private / archive). Install: `dsh plugin --profile web add dsh-repo-browser`.
 
-DeepSeek Harness 的 GitHub 仓库浏览器插件：标题栏提供 GitHub 猫头按钮，点击在页面**右侧**打开可调宽度的仓库列表面板。
+DeepSeek Harness 的 GitHub 仓库浏览器插件：作为**档位**挂在外壳 `dsh-rightbar-shell` 的右栏里，从右栏标题行的档位菜单切换进来。
 
 ## 功能
 
@@ -10,7 +10,7 @@ DeepSeek Harness 的 GitHub 仓库浏览器插件：标题栏提供 GitHub 猫�
 - **本地分组**：全部仓库 / 未分类 / 自定义分组（新建、重命名、删除），分组是纯本地视图层，存 `$DSH_HOME/storages/repo-browser/groups.json`，与 GitHub 侧无关
 - **卡片 ⋮ 菜单**：移动到分组（单选即移）、设为私有/取消私有、归档/取消归档（经 GitHub `PATCH /repos/{owner}/{repo}`）
 - **深浅主题**：太阳/月亮一键切换（记忆偏好）
-- **面板**：右侧 `shell.overlay`，默认 360px，左边缘拖拽 360–720 调宽
+- **面板**：内容画在外壳的右栏里（登记档位）；列宽由外壳统管（默认 350px，边界可拖）
 - **凭据**：读取 DSH credentials 中的 `GITHUB_TOKEN`（修改私有/归档需要 `repo` scope）
 - **新会话页自动隐藏**：未选会话、或当前是空白会话（新建未发言）时不渲染面板，并同时撤掉给内容让位的布局边距、收起已展开的卡片菜单；`open` 开关本身不改动，回到真实会话原样恢复
 
@@ -42,7 +42,7 @@ dsh plugin --profile web add dsh-repo-browser
 
 ```
 lib/index.js   host: 路由 /plugins/repo-browser/{list,groups,repo}
-lib/client.js  client: shell.overlay + conversation.session.header.actions
+lib/client.js  client: 向外壳登记 rightbar 档位（内容 + 刷新按钮）
 cordis.patch.yml
 ```
 
